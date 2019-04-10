@@ -21,7 +21,13 @@ public static class Construction
     /// <returns>true если успешно построили</returns>
     public static bool ConstructBuilding(Vector2Int coordinate,IBuilding building)
     {
-        bool isFogeOfWar = fogeOfWarTilemap.GetTile(new Vector3Int(coordinate.x, coordinate.y, 0)).name==TileNames.FOGE;
+        TileBase tile = fogeOfWarTilemap.GetTile(new Vector3Int(coordinate.x, coordinate.y, 0));
+        if (tile == null)
+        {
+            return false;       
+        }
+
+       bool isFogeOfWar = tile.name==TileNames.FOGE;
         bool isNotAvailibleBuildBuilding = !availibleBuilding.IsAvailibleBuilding[coordinate.x, coordinate.y];
         if ((isNotAvailibleBuildBuilding) &&(isFogeOfWar))
         {

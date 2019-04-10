@@ -24,9 +24,7 @@ public class LevelManager : MonoBehaviour
         gridTilemap.Initialize(worldSize,offset);
        // buildings.Initialize();
         buildingTilemap.Initialize();
-        Construction.ConstructBuilding(new Vector2Int(1, 1), new MainBase());
-        Construction.ConstructBuilding(new Vector2Int(0, 0), new MainBase());
-        Construction.ConstructBuilding(new Vector2Int(2, 2), new MainBase());
+        //Construction.ConstructBuilding(new Vector2Int(1, 1), new MainBase());
         GameObject go=GameObject.Find("BuildingTilemap");
         Tilemap t = go.GetComponent<Tilemap>();
         TileBase ta = t.GetTile(new Vector3Int(2, 2, 0));

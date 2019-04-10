@@ -15,6 +15,10 @@ public class GeneralBuilding:ScriptableObject
     /// </summary>
     private GameObject buildingsPrefab;
 
+
+    /// <summary>
+    /// Список всех зданий в палитре
+    /// </summary>
     public List<TileBase> tiles;
     public void OnEnable()
     {
